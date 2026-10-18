@@ -1,0 +1,32 @@
+{
+  "name": "JM",
+  "badgeLabel": "JM",
+  "signingKey": "dbdc10ddceea723638a567d4a00f1f397fdd060971db868d9562292322f61074",
+  "contact": {
+    "website": "https://github.com/ursb1/extensions"
+  },
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "JM",
+        "packageName": "eu.kanade.tachiyomi.extension.zh.jinmantiantang",
+        "resources": {
+          "apkUrl": "https://github.com/ursb1/extensions/tree/main/apk/jm.apk",
+          "iconUrl": ""
+        },
+        "extensionLib": "1.6",
+        "versionCode": 106059,
+        "versionName": "1.6.59",
+        "contentWarning": "CONTENT_WARNING_NSFW",
+        "sources": [
+          {
+            "id": 6286738698187452081,
+            "name": "禁漫天堂",
+            "language": "zh",
+            "homeUrl": "https://comic18j-ada.work"
+          }
+        ]
+      }
+    ]
+  }
+}
