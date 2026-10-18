@@ -11,7 +11,7 @@
         "name": "JM",
         "packageName": "eu.kanade.tachiyomi.extension.zh.jinmantiantang",
         "resources": {
-          "apkUrl": "https://github.com/ursb1/extensions/tree/main/apk/jm.apk",
+          "apkUrl": "https://gh-proxy.com/https://github.com/ursb1/extensions/raw/refs/heads/main/apk/jm.apk",
           "iconUrl": ""
         },
         "extensionLib": "1.6",
