@@ -17,11 +17,11 @@
         "extensionLib": "1.6",
         "versionCode": 106059,
         "versionName": "1.6.59",
-        "contentWarning": "CONTENT_WARNING_NSFW",
+        "contentWarning": "NSFW",
         "sources": [
           {
             "id": 6286738698187452081,
-            "name": "禁漫天堂",
+            "name": "JMComic",
             "language": "zh",
             "homeUrl": "https://comic18j-ada.work"
           }

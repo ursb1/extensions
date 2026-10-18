@@ -1,0 +1,97 @@
+{
+  // ==================== 仓库级元数据 ====================
+
+  // 必填：仓库名称，显示在 Mihon 的扩展仓库列表里
+  "name": "My Extensions",
+
+  // 必填：仓库短标签，显示在扩展卡片上，建议 2~4 个字符
+  "badgeLabel": "MY",
+
+  // 必填：APK 签名证书的 SHA-256
+  // 格式：小写十六进制、无冒号、64 个字符
+  // 获取：apksigner verify --print-certs app.apk
+  //      或 keytool -printcert -jarfile app.apk 后去掉冒号转小写
+  "signingKey": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+
+  // 必填：联系方式
+  "contact": {
+    // 必填：仓库主页或项目地址
+    "website": "https://github.com/yourname/mihon-extensions",
+    // 可选：Discord 邀请链接；没有就写 null，或整个字段省略
+    "discord": null
+  },
+
+  // ==================== 扩展列表（二选一） ====================
+
+  // 方式 A：直接内嵌扩展列表（小仓库推荐）
+  "extensionList": {
+    "extensions": [
+      {
+        // 必填：扩展显示名称
+        "name": "Example",
+
+        // 必填：APK 的 applicationId，必须完全一致
+        "packageName": "eu.kanade.tachiyomi.extension.zh.example",
+
+        // 必填：资源地址
+        "resources": {
+          // 必填：APK 下载直链（GitHub Release asset 直链即可）
+          "apkUrl": "https://github.com/yourname/mihon-extensions/releases/download/v1.0.0/tachiyomi-zh.example-v1.0.0.apk",
+          // 必填：扩展图标直链（PNG/JPG）
+          "iconUrl": "https://raw.githubusercontent.com/yourname/mihon-extensions/main/icons/example.png"
+          // 注意：keiyoushi 里的 "jarUrl" 当前 Mihon 不读取，写了也会被忽略
+        },
+
+        // 必填：扩展编译所用的 extensions-lib 版本
+        // 当前 Mihon 只支持 "1.4" 和 "1.6"，写其他值扩展不会加载
+        "extensionLib": "1.6",
+
+        // 必填：版本号，Mihon 只靠它判断更新，必须严格递增
+        // 可写数字或字符串；推荐 主版本*100000 + 次版本*1000 + 自身版本
+        // 例：1.6.4 -> 106004
+        "versionCode": "106000",
+
+        // 必填：展示用版本名，随意，但建议与 versionCode 对应
+        "versionName": "1.6.0",
+
+        // 必填：内容分级，三选一：
+        // "CONTENT_WARNING_SAFE"  普通
+        // "CONTENT_WARNING_MIXED" 混合
+        // "CONTENT_WARNING_NSFW"  成人
+        // 也兼容简写 "SAFE" / "MIXED" / "NSFW"
+        "contentWarning": "CONTENT_WARNING_SAFE",
+
+        // 必填：该扩展包含的所有源，至少一个
+        "sources": [
+          {
+            // 必填：源 ID，必须与代码里 override val id 的值完全一致
+            // 自己发布时在源码里硬编码一个唯一 Long，再原样填这里
+            "id": "1234567890123456789",
+
+            // 必填：源显示名称
+            "name": "Example",
+
+            // 必填：语言标签（BCP-47）
+            // 常用：zh / en / ja / ko
+            // 多语言源用 "all" 或 "mul"
+            "language": "zh",
+
+            // 可选：站点主页，默认空字符串 ""
+            "homeUrl": "https://example.com",
+
+            // 可选：镜像站列表，默认空数组 []
+            "mirrorUrls": [],
+
+            // 可选：源提示信息（显示给用户），默认 null
+            "message": null
+          }
+        ]
+      }
+    ]
+  }
+
+  // 方式 B：扩展列表放在单独文件（大仓库推荐，主 index 更小）
+  // 与上面的 "extensionList" 二选一；两者同时存在时以此字段为准。
+  // 该 URL 返回的内容格式为：{ "extensions": [ ...同上... ] }
+  // "extensionListUrl": "https://raw.githubusercontent.com/yourname/mihon-extensions/main/extensions.json"
+}
