@@ -35,8 +35,8 @@
           "iconUrl": ""
         },
         "extensionLib": "1.6",
-        "versionCode": 100000,
-        "versionName": "1.0.00",
+        "versionCode": 106020,
+        "versionName": "1.6.20",
         "contentWarning": "CONTENT_WARNING_SAFE",
         "sources": [
           {
